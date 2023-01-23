@@ -1,0 +1,139 @@
+body {
+    background-image: url(./Images/bg1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    margin: 0px;
+    padding: 0px;
+  }
+
+.container {
+    border: 0.5px solid black;
+    width: 60vh;
+    margin: 3% 0 3% 50%;
+    transform: translate(-50%);
+    border-radius: 4px;
+    background-color: rgba(190, 199, 190, 0.692);
+    box-shadow: 10px 18px 15px rgb(17, 17, 17);
+}
+
+.container label, .container input {
+    display: block;
+}
+
+.container label {
+    width: 30%;
+    color: black;
+    margin-right: 5%;
+}
+
+.group {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
+
+.input {
+    width: 60%;
+    height: 90%;
+    padding: 4px;
+    position: relative;
+    justify-content: end;
+    margin: 3px 0 0 10px;
+    outline: none;
+}
+
+.container form {
+    padding: 10px;
+    text-align: center;
+}
+
+#male, #female, #other {
+    margin: 0 5px 0 0;
+}
+
+#add_btn {
+    width: 30%;
+    padding: 3px;
+}
+
+#add {
+    padding: 3px;
+    width: 20%;
+    background-color: rgb(67, 171, 240);
+    margin-left: 5%;
+    border-radius: 3px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.gen {
+    margin-left: -5px;
+}
+
+#submit {
+    width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3%;
+    transform: translate(-50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 3%;
+    font-size: 1 rem;
+    font-weight: 800;
+    font-size: 17px;
+    background-color:  rgb(16, 214, 92);
+}
+
+#reset {
+    margin-top: -5%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    border: 0.4px solid black;
+    border-radius: 3px;
+    background-color: rgb(211, 63, 63);
+}
+
+#new_input {
+    padding: 5px;
+    margin: 2% 0 2% 25%;
+    border: 0.5px solid gray;
+    box-shadow: 1px 2px 4px inset;
+    font-size: 15px;
+    border-radius: 4px;
+    outline: none;
+}
+
+#new_radio {
+        display: inline-block;
+        border: 0.5px solid gray;
+        padding-top: 20px;
+        font-size: 15px;
+        outline: none;
+  
+}
+
+#new_label {
+    width: 10%;
+    display: inline;
+    padding-left: 7px;
+}
+
+.radio_block {
+    display: block;
+}
+
+#new_button {
+    background-color: blueviolet;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    width: 30%;
+    padding: 7px;
+    color: white;
+}
