@@ -13,7 +13,7 @@
   <body>
     <!--signup container-->
     <div class="container">
-      <form action="" id="signup_form" onsubmit="return Check()">
+      <form action="" id="signup_form" onsubmit="return check(), success_alert()">
         <h1>Signup</h1>
 
         <!-- div for name -->
@@ -107,7 +107,7 @@
         </div>
 
         <!-- submit button -->
-        <input type="submit" id="submit" value="Signup" /> <br />
+        <input type="submit" id="submit" value="Signup"/> <br />
 
         <!-- reset button -->
         <input type="reset" id="reset" value="Reset" onclick="resetForm()" />

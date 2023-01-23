@@ -1,5 +1,5 @@
 //Age validation
-function Check() {
+function check() {
   let age = document.getElementById("age");
   let mobileNo = document.getElementById("mobile").value;
 
@@ -11,8 +11,13 @@ function Check() {
   if (mobileNo.length != 10 || mobileNo == "") {
     alert("Mobile number must be 10 digits.");
     return false;
+  } 
+
+  if(age.value >= 18 && mobileNo.length == 10) {
+    alert("Form submitted successfully!!!");
   }
 }
+
 
 function resetForm() {
   let del = document.getElementById("add_field");
