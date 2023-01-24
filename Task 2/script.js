@@ -37,13 +37,9 @@ function addField(type) {
   let append_inside = document.getElementById("add_field");
 
   if (type === "empty") {
-    //Create p element
-    p_element.innerHTML = "Please select any option.";
-    p_element.setAttribute("id", "ptag");
-    //Append
-    append_inside.appendChild(p_element);
+    //select option alert
+    alert("Please select any option.");
   } else {
-    // append_inside.style.display = "block";
     switch (type) {
       case "input": {
         //for input
