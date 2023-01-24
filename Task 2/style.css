@@ -59,6 +59,7 @@ body {
 #add_btn {
     width: 30%;
     padding: 3px;
+    margin-left: 2%;
 }
 
 #add {
@@ -109,7 +110,7 @@ body {
     outline: none;
 }
 
-#new_input_label, #new_button_label, #new_h1_label {
+#new_input_label, #new_button_label, #new_h1_label, #new_select_label {
     position: relative;
     top: 30px;
     left: 3%;
@@ -140,7 +141,19 @@ body {
     padding-top: 8px;
     padding-bottom: 8px;
     margin-left: -20%;
-    /* display: block; */
+}
+
+#new_select {
+    width: 30%;
+    padding: 4px;
+    margin-left: 7%;
+}
+
+#new_select_label {
+    width: 40%;
+    margin-top: -4%;
+    margin-left: -5%;
+    padding-bottom: 2%;
 }
 
 #new_button {

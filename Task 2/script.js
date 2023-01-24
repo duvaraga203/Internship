@@ -18,6 +18,10 @@ function check() {
   }
 }
 
+function submit_wo_refresh() { 
+  document.getElementById("signup_form").reset();
+ }
+
 function resetForm() {
   let del = document.getElementById("add_field");
   let element = document.createElement("div");
@@ -30,8 +34,8 @@ function resetForm() {
 function addField(type) {
   let element = document.createElement("input");
   let h1_element = document.createElement("h1");
-  let p_element = document.createElement("p");
   let radio_div = document.createElement("div");
+  let select_box = document.createElement("select");
   let label_element = document.createElement("label");
   let label_element1 = document.createElement("label");
   let append_inside = document.getElementById("add_field");
@@ -105,16 +109,33 @@ function addField(type) {
       case "h1": {
         //Create h1 element
         h1_element.innerHTML = "H1 element";
-        h1_element.setAttribute("id","h1_element")
+        h1_element.setAttribute("id", "h1_element");
 
         //label
         label_element.innerHTML = "H1 tag";
-        label_element.setAttribute("id","new_h1_label");
+        label_element.setAttribute("id", "new_h1_label");
 
         //Append
         append_inside.appendChild(label_element);
         append_inside.appendChild(h1_element);
 
+        break;
+      }
+
+      default: {
+        select_box.innerHTML =
+          "<option value='option1'>option 1</option><option value='option2'>option 2</option> <option value='option3'>option 3</option>";
+
+        //set attribute
+        select_box.setAttribute("id", "new_select");
+
+        //label
+        label_element.innerHTML = "Select option";
+        label_element.setAttribute("id", "new_select_label");
+
+        //append
+        append_inside.appendChild(label_element);
+        append_inside.appendChild(select_box);
         break;
       }
     }
