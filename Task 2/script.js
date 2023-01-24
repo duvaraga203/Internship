@@ -18,10 +18,6 @@ function check() {
   }
 }
 
-function submit_wo_refresh() { 
-  document.getElementById("signup_form").reset();
- }
-
 function resetForm() {
   let del = document.getElementById("add_field");
   let element = document.createElement("div");
