@@ -101,16 +101,25 @@ body {
 
 #new_input {
     padding: 5px;
-    margin: 2% 0 2% 25%;
-    border: 0.5px solid gray;
-    box-shadow: 1px 2px 4px inset;
+    width: 55%;
+    margin: 2% 0 2% 38%;
+    border: 0.5px solid rgb(104, 101, 101);
     font-size: 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     outline: none;
 }
 
+#new_input_label, #new_button_label, #new_h1_label {
+    position: relative;
+    top: 30px;
+    left: 3%;
+}
+
+#h1_element {
+    margin-left: 29%;
+}
+
 #new_radio {
-        display: inline-block;
         border: 0.5px solid gray;
         padding-top: 20px;
         font-size: 15px;
@@ -120,18 +129,24 @@ body {
 
 #new_label {
     width: 10%;
-    display: inline;
     padding-left: 7px;
 }
 
+#new_radio_label,#new_label, #new_radio {
+    display: inline;
+}
+
 .radio_block {
-    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: -20%;
+    /* display: block; */
 }
 
 #new_button {
     background-color: blueviolet;
-    margin-left: 50%;
-    transform: translate(-50%);
+    margin-top: 1%;
+    margin-left: 38%;
     border-radius: 5px;
     width: 30%;
     padding: 7px;

@@ -11,19 +11,18 @@ function check() {
   if (mobileNo.length != 10 || mobileNo == "") {
     alert("Mobile number must be 10 digits.");
     return false;
-  } 
+  }
 
-  if(age.value >= 18 && mobileNo.length == 10) {
+  if (age.value >= 18 && mobileNo.length == 10) {
     alert("Form submitted successfully!!!");
   }
 }
-
 
 function resetForm() {
   let del = document.getElementById("add_field");
   let element = document.createElement("div");
   del.remove();
-  element.setAttribute("id","add_field");
+  element.setAttribute("id", "add_field");
   document.getElementById("new_field").appendChild(element);
 }
 
@@ -34,6 +33,7 @@ function addField(type) {
   let p_element = document.createElement("p");
   let radio_div = document.createElement("div");
   let label_element = document.createElement("label");
+  let label_element1 = document.createElement("label");
   let append_inside = document.getElementById("add_field");
 
   if (type === "empty") {
@@ -43,15 +43,21 @@ function addField(type) {
     //Append
     append_inside.appendChild(p_element);
   } else {
-    append_inside.style.display = "block";
+    // append_inside.style.display = "block";
     switch (type) {
       case "input": {
         //for input
         element.setAttribute("type", type);
-        element.setAttribute("value", "type here");
+        element.setAttribute("placeholder", "type here");
         element.setAttribute("id", "new_input");
 
+        //label
+        label_element.innerHTML = "Input field";
+        label_element.setAttribute("type", "text");
+        label_element.setAttribute("id", "new_input_label");
+
         //appending
+        append_inside.appendChild(label_element);
         append_inside.appendChild(element);
         break;
       }
@@ -60,21 +66,26 @@ function addField(type) {
         //radio div
         radio_div.setAttribute("class", "radio_block");
 
+        //label1
+        label_element1.innerHTML = "Radio button";
+        label_element1.setAttribute("type", "text");
+        label_element1.setAttribute("id", "new_radio_label");
+
         //for input
         element.setAttribute("type", type);
         element.setAttribute("id", "new_radio");
 
-        //label
-        label_element.innerHTML = "Radio button.";
+        // //label2
+        label_element.innerHTML = "Click here.";
         label_element.setAttribute("for", "new_radio");
         label_element.setAttribute("type", "text");
         label_element.setAttribute("id", "new_label");
 
-        //appending
+        // //appending
         append_inside.appendChild(radio_div);
+        radio_div.appendChild(label_element1);
         radio_div.appendChild(element);
         radio_div.appendChild(label_element);
-
         break;
       }
 
@@ -84,7 +95,13 @@ function addField(type) {
         element.setAttribute("value", type);
         element.setAttribute("id", "new_button");
 
+        //label
+        label_element.innerHTML = "Button";
+        label_element.setAttribute("type", "text");
+        label_element.setAttribute("id", "new_button_label");
+
         //appending
+        append_inside.appendChild(label_element);
         append_inside.appendChild(element);
         break;
       }
@@ -92,7 +109,14 @@ function addField(type) {
       case "h1": {
         //Create h1 element
         h1_element.innerHTML = "H1 element";
+        h1_element.setAttribute("id","h1_element")
+
+        //label
+        label_element.innerHTML = "H1 tag";
+        label_element.setAttribute("id","new_h1_label");
+
         //Append
+        append_inside.appendChild(label_element);
         append_inside.appendChild(h1_element);
 
         break;
