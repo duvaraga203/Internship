@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <title>Signup</title>
+  </head>
+  <body>
+    <header>
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand">
+            <i class="fa fa-tasks" aria-hidden="true"></i> My Task</a
+          >
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+              <a href="../bs.html" class="nav-item nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i> Home</a
+              >
+              <a href="#" class="nav-item nav-link">
+                <i
+                  class="fa fa-user-circle-o"
+                  aria-hidden="true"
+                  style="color: white"
+                ></i>
+                Profile</a
+              >
+              <a href="#" class="nav-item nav-link">
+                <i
+                  class="fa fa-comment"
+                  aria-hidden="true"
+                  style="color: white"
+                ></i>
+                Messages</a
+              >
+              <a href="#" class="nav-item nav-link" tabindex="-1">
+                <i
+                  class="fa fa-mobile-phone"
+                  aria-hidden="true"
+                  style="color: white; font-size: 20px"
+                ></i>
+                Contact</a
+              >
+            </div>
+            <div class="navbar-nav ms-auto">
+              <a href="./login.html" class="nav-item nav-link">
+                <i
+                  class="fa fa-sign-in"
+                  aria-hidden="true"
+                  style="color: white"
+                ></i>
+                Login</a
+              >
+            </div>
+            <div class="navbar-nav ms-auto">
+              <a href="./signup.html" class="nav-item nav-link active">
+                <i
+                  class="fa fa-pencil-square-o"
+                  aria-hidden="true"
+                  style="color: white"
+                ></i>
+                Signup</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- signup form -->
+    <div class="container mt-3 mb-3">
+      <div class="row">
+        <div class="container col-sm-12">
+          <div class="card col-lg-4 offset-lg-4">
+            <div class="card-body">
+              <h2 class="card-title text-center">Signup form</h2>
+              <form action="#" method="post" class="p-2">
+                <div class="form-group" id="f_name">
+                  <label for="fname">First name</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="fname"
+                    placeholder="Enter first name"
+                  />
+                  <small id="name_alert"></small>
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="lname">Last name <small>(Optional)</small></label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="lname"
+                    placeholder="Enter your lastname"
+                  />
+                </div>
+                <div class="form-group mt-2">
+                  <label for="age">Age</label>
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="age"
+                    placeholder="Enter your age"
+                  />
+                  <small id="age_alert"></small>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="gender">Gender</label>
+
+                  <select id="gender" class="form-control">
+                    <option value="">Choose your gender</option>
+                    <option value="male">Male</option>
+                    <option value="femlale">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+
+                  <small id="gender_alert"></small>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="m_number">Mobile no.</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="phone">+91</span>
+                    </div>
+                    <input
+                      class="form-control"
+                      type="number"
+                      id="m_number"
+                      placeholder="Enter mobile no"
+                    />
+                  </div>
+                  <small id="mobile_alert"></small>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="e_mail">Email</label>
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="e_mail"
+                    placeholder="abc@example.com"
+                  />
+                  <small id="email_alert"></small>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="pass">Password</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="pass"
+                    placeholder="Enter password"
+                  />
+                  <small id="password_alert"></small>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="r_pass">Confirm password</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="r_pass"
+                    placeholder="Re-enter your passowrd"
+                  />
+                  <small id="rpassword_alert"></small>
+                </div>
+
+                <div class="form-group form-check mt-2">
+                  <input class="form-check-input" type="checkbox" id="tac" />
+                  <label for="tac">I agree to all terms and conditions.</label>
+                  <small id="tac_alert"></small>
+                </div>
+
+                <div class="form-group mt-2 text-center">
+                  <button type="submit" class="btn btn-success" id="sub_btn">
+                    Signup
+                  </button>
+                  <br />
+                  <button type="reset" class="btn btn-sm mt-1 btn-warning">
+                    Reset</button
+                  ><br />
+
+                  <button
+                    type="button"
+                    class="btn btn-sm mt-1 btn-info"
+                    id="add_btn"
+                  >
+                    Add middle name
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm mt-1 btn-danger"
+                    id="rem_btn"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

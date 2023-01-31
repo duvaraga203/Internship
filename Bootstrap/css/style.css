@@ -1,0 +1,27 @@
+body {
+  background: rgb(87, 110, 241);
+  background: linear-gradient(
+    90deg,
+    rgba(87, 110, 241, 1) 9%,
+    rgba(167, 244, 241, 1) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#my_form div input,
+#phone,
+#my_form div select {
+  border: 1px solid rgb(184, 181, 181);
+}
+
+.card-body {
+  border: 1px solid rgb(153, 151, 151);
+  border-radius: 8px;
+  box-shadow: 2px 3px 9px;
+}
