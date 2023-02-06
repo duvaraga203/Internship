@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.pos {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  margin: 20% 0 0 20%;
+}
+
+.box1 {
+  height: 60px;
+  width: 60px;
+  background-color: yellow;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.box2 {
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+}

@@ -1,0 +1,95 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.h3-center {
+  border: 2px solid rgb(95, 94, 92);
+  border-bottom: 0px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+}
+
+/* center div tag*/
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.hover-ef {
+  cursor: pointer;
+}
+
+/* font */
+.h3-center,
+select,
+option,
+label,
+a, #opt,
+input {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.center-signup {
+  margin-top: 5%;
+}
+
+#opt {
+  font-size: 11px;
+}
+
+select {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+option {
+  border: 0.5px solid black;
+  border-top: 0px;
+  border-left: 0px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 7px;
+  border: 0.5px solid black;
+  border-top: 0px;
+  border-left: 0px;
+}
+
+.label-style {
+  padding-top: 10px;
+}
+
+.bg {
+  padding: 25px 0 25px 0;
+  background-color: rgba(160, 156, 149, 0.712);
+}
+
+.lg-link {
+  padding-left: 30px;
+}
+
+.sg-link {
+  padding-left: 10px;
+}
+
+.btm {
+  border: 2px solid rgb(95, 94, 92);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.pad-input {
+  border: 0.5px solid black;
+  background: rgb(0, 243, 150);
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-top: 10%;
+  padding: 7px 15px 7px 15px;
+  font-size: medium;
+  font-weight: 600;
+}

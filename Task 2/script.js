@@ -126,7 +126,7 @@ function addField(type) {
         select_box.setAttribute("id", "new_select");
 
         //label
-        label_element.innerHTML = "Select option";
+        label_element.innerHTML = "Selectbox";
         label_element.setAttribute("id", "new_select_label");
 
         //append

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <title>Review</title>
+  </head>
+  <body>
+    <script src="./script.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#sub_button").click(function () {
+          if ($("#name").val() == "") {
+            alert("please fill name.");
+          } else if ($("#age").val() <= 18 || $("#age").val() == "") {
+            alert("Age must be above 18.");
+          } else if ($("#u_password").val() == "") {
+            alert("Please fill password.");
+          } else if ($("#r_password").val() == "") {
+            alert("Please re-enter password.");
+          } else if ($("m_number").length() < 10) {
+            alert("Mobile number must be 10 digits.");
+          }
+        });
+      });
+    </script>
+
+    <div class="container-sm">
+      <form action="" class="col-4 mx-auto ml-auto">
+        <h3 class="text text-center">Signup form</h3>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label for="name" class="input-group-text border-0 bg-transparent"
+              >Name</label
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Your name"
+            aria-label="Username"
+            minlength="3"
+            maxlength="30"
+            required
+          />
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label for="age" class="input-group-text border-0 bg-transparent"
+              >Age</label
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            placeholder="Your age"
+            aria-label="Username"
+          />
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label for="gender" class="input-group-text border-0 bg-transparent"
+              >Gender</label
+            >
+          </div>
+          <select name="" class="form-control" id="gender" aria-label="gender">
+            <option value="">Choose gender</option>
+            <option value="male">Male</option>
+            <option value="femal">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label
+              for="m_number"
+              class="input-group-text border-0 bg-transparent"
+              >Mobile no</label
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="m_number"
+            placeholder="Your mobile no"
+            aria-label="Username"
+            required
+          />
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label for="e_mail" class="input-group-text border-0 bg-transparent"
+              >Email</label
+            >
+          </div>
+          <input
+            type="email"
+            class="form-control"
+            id="e_mail"
+            placeholder="Your email"
+            aria-label="Email"
+            required
+          />
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label
+              for="u_password"
+              class="input-group-text border-0 bg-transparent"
+              >Password</label
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="u_password"
+            placeholder="Your password"
+            aria-label="Email"
+            required
+          />
+        </div>
+        <div class="input-group mb-3 row">
+          <div class="input-group-prepend col-4">
+            <label
+              for="r_password"
+              class="input-group-text border-0 bg-transparent"
+              >Re-type <br />
+              password</label
+            >
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            id="r_password"
+            placeholder="Re-enter password"
+            aria-label="Email"
+            required
+          />
+        </div>
+        <input
+          type="submit"
+          value="Submit"
+          class="btn btn-success col-4"
+          id="sub_button"
+        />
+      </form>
+    </div>
+  </body>
+</html>

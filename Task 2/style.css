@@ -157,11 +157,12 @@ body {
 }
 
 #new_button {
-    background-color: blueviolet;
+    background-color: rgb(169, 86, 247);
     margin-top: 1%;
     margin-left: 38%;
     border-radius: 5px;
     width: 30%;
     padding: 7px;
     color: white;
+    border: 1px solid black;
 }

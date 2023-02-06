@@ -1,0 +1,173 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#page-title {
+  background: rgb(87,110,241);
+  background: linear-gradient(90deg, rgba(87,110,241,1) 9%, rgba(166,221,233,1) 53%, rgba(0,212,255,1) 100%);
+  margin: -10px -8px 0px -8px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+#page-title h3 {
+  z-index: 3;
+  width: 80%;
+  margin-left: 45%;
+}
+
+.lang {
+  margin-left: 20%;
+  padding: 5px;
+  width: 20%;
+}
+
+.navbar {
+  padding-right: 10px;
+  margin-right: 0px;
+  z-index: 2;
+  background-color: rgb(16, 214, 92);
+  box-shadow: 0px 8px 15px rgb(88, 86, 86);
+  display: flex;
+  justify-content: space-between;
+  margin-left: -30px;
+  margin-right: -8px;
+  position: sticky;
+  top: 0;
+}
+
+.logup {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(16, 214, 92);
+  margin-right: 30px;
+}
+
+.navbar ul {
+    background-color: rgb(16, 214, 92);
+    width: 70%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    padding: 5px 0px 5px 0px;
+    justify-content: flex-start;
+    margin: 0px -30px 0px 28px;
+    font-size: 16px;
+    font-weight: bold;
+ }
+
+.for-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-titles {
+    width: 20%;
+    height: 600px;
+    text-align: center;
+    z-index: 1;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 10px 0px -4px;
+    border: 1px solid black;
+    position: sticky;
+    top: 60px;
+    bottom: 20px;
+    overflow: scroll;
+}
+
+.content-titles a {
+  text-decoration: none;
+  color: black;
+}
+
+.content-titles p {
+  border-bottom: 3px solid rgb(109, 106, 106);
+  border-bottom-style: double;
+  padding-bottom: 5px;
+}
+
+.title-list li {
+  width: 80%;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.title-list li:nth-child(even){
+  background-color: rgba(187, 190, 192, 0.534);
+}
+
+.content {
+  background-color: white;
+  width: 60%;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+#location, .songs {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#location h2 {
+  padding: 20px 0px 20px 0px;
+}
+
+#location iframe {
+  height: 600px;
+  width: 700px;
+  box-shadow: 0px 0px 25px;
+  padding: 20px 0px 20px 0px;
+}
+
+.songs Audio {
+  box-shadow: 0px 0px 15px;
+  border-radius: 28px;
+}
+
+.content p{
+  margin-top: 5px;
+  text-indent: 60px;
+  padding: 10px;
+  
+}
+
+.ads {
+  background-image: url("C:/Users/DGN/Desktop/New folder/Day 3/Images/Ad area.jpg");
+    width: 20%;
+    z-index: 1;
+    height: 600px;
+    border-radius: 10px;
+    margin: 10px -4px 0px 10px;
+    text-align: center;
+    border: 1px solid black;
+    position: sticky;
+    top: 60px;
+}
+
+.ads p {
+  margin-top: 270px;
+  color: white;
+  font-weight: 900;
+}
+
+.btn {
+  padding: 15px 25px 15px 25px;
+  border: none;
+  background-color: rgb(16, 214, 92);
+  border-right: 1px solid white;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 16.5px;
+}
+
+.btn:hover {
+    color: black ;
+    background-color: white;
+}
+
+

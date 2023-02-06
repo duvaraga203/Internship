@@ -1,0 +1,34 @@
+body {
+  background: rgb(87, 110, 241);
+  background: linear-gradient(
+    90deg,
+    rgba(87, 110, 241, 1) 9%,
+    rgba(166, 221, 233, 1) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.container {
+  margin-top: 5%;
+}
+
+#sub_button {
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+form {
+  border: 1px solid rgb(102, 100, 100);
+  padding: 10px;
+  border-radius: 7px;
+  background-color: rgba(175, 175, 170, 0.575);
+}
+
+form h3 {
+  padding-bottom: 10px;
+}
+
+#r_password {
+  margin-top: 3%;
+  height: 40%;
+}
