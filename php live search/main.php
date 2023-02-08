@@ -22,7 +22,7 @@
     <h2 class="text-light text-center mt-2 p-2">Auto complete</h2>
 
     <div class="container row">
-      <form class="col-lg-4 offset-lg-4 mt-2 mb-2 p-2 bg-info" method="post" action="main.php">
+      <form class="col-lg-4 offset-lg-4 mt-2 mb-2 p-2" method="post" action="main.php">
         <div class="input-group mt-2 mb-2">
           <input type="text" class="form-control" name="name" id="uname" placeholder="Enter name">
           <div class="input-group-append">
@@ -34,54 +34,55 @@
     </div>
     <div class="row" style="position:absolute;z-index:1;margin-left:26%;">
       <div class="col-12 list-group" id="show_name" style="margin-top:-20px">
-        
+
       </div>
     </div>
 
     <div class="row">
-            <table class="bg-light table-light mb-2">
-                <tr>
-                    <th>Roll no</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                </tr>
+      <table class="bg-light table mb-2">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th class="col">Roll no</th>
+            <th class="col">Name</th>
+            <th class="col">Age</th>
+          </tr>
+        </thead>
+        <?php
+        error_reporting(0);
+        $con = new mysqli('localhost', 'root', '', 'db1');
 
-                <?php
-                error_reporting(0);
-                $con = new mysqli('localhost', 'root', '', 'db1');
-
-                //show error
-                if ($con->connect_errno) {
-                    echo $con->connect_errno;
-                    echo "db is not connected!!!";
-                    die();
-                }
+        //show error
+        if ($con->connect_errno) {
+          echo $con->connect_errno;
+          echo "db is not connected!!!";
+          die();
+        }
 
 
-                //show details
-                $user_name = $_POST['name'];
-                $query = "SELECT * FROM user_input where name='$user_name'";
-                $connect = mysqli_query($con, $query);
-                $row = mysqli_num_rows($connect);
+        //show details
+        $user_name = $_POST['name'];
+        $query = "SELECT * FROM user_input where name='$user_name'";
+        $connect = mysqli_query($con, $query);
+        $row = mysqli_num_rows($connect);
 
-                if ($row > 0) {
-                    while ($data = mysqli_fetch_assoc($connect)) {
-                        echo "<tr>
+        if ($row > 0) {
+          while ($data = mysqli_fetch_assoc($connect)) {
+            echo "<tr>
                         <td>" . $data['roll'] . "</td>
                         <td>" . $data['name'] . "</td>
                         <td>" . $data['age'] . "</td>
                         </tr>";
-                    }
-                }
-                ?>
+          }
+        }
+        ?>
 
-            </table>
-        </div>
+      </table>
+    </div>
 
 
   </div>
 
- 
+
 
   <script src="./script.js"></script>
 </body>

@@ -13,9 +13,7 @@ if(isset($_POST['query'])){
     $con = $connect->query($query);
     if ($con->num_rows > 0) {
         while($row= $con->fetch_assoc()){
-            $id = 1;
             echo "<a class='list-group-item ml-2 u_name style='width:70%''>".$row['name']."</a>";
-            $id++;
         }
     }else {
         echo "<a class='list-group-item ml-2'>No records found.</a>";
