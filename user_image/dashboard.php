@@ -23,6 +23,10 @@ if (!isset($_SESSION['username'])) {
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Ajax form -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
+
 </head>
 
 <body>
@@ -53,7 +57,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container mt-3">
         <h3 class="text-center">Image upload</h3>
         <form class="offset-lg-3 col-lg-6 bg-dark text-light mt-3" action="dashboard.php" enctype="multipart/form-data"
-            method="post">
+            id="image_form" method="post">
             <span class="row offset-lg-2 p-3">
                 <label class="col-lg-4">Select image</label>
                 <input class="col-lg-8" type="file" name="fileToUpload" id="int_image">
@@ -75,16 +79,14 @@ if (!isset($_SESSION['username'])) {
 
 </html>
 
-
-
 <script>
 
     $(document).ready(function () {
+
         $.ajax({
             type: "GET",
-            url: "store_inside.php",
+            url: "get_image.php",
             success: function (response) {
-                console.log(response);
                 $("#images_div").html(response);
             }
 
@@ -97,9 +99,9 @@ if (!isset($_SESSION['username'])) {
 </script>
 
 <?php
-
-if (isset($_POST['submit_image'])) {
+if (isset($_POST["submit_image"])) {
     $target_file = basename($_FILES["fileToUpload"]["name"]);
+    echo "<script>console.log($target_file)</script>";
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -146,4 +148,5 @@ if (isset($_POST['submit_image'])) {
     }
 
 }
+
 ?>
