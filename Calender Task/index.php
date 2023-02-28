@@ -56,15 +56,15 @@
             if (isset($_POST['submit'])) {
 
 
-                // Get the number of days in a week, days in a month, and months in a year from the user
+                // Days in a week, days in a month, and months in a year
                 $numDaysInWeek = $_POST['days_week'];
                 $numDaysInMonth = $_POST['days_month'];
                 $numMonthsInYear = $_POST['months'];
 
-                // Create an array of weekdays
+                // Weekdays
                 $weekdays = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
 
-                // Create an array of months
+                // Months
                 $months = array(
                     'January',
                     'February',
@@ -80,29 +80,28 @@
                     'December'
                 );
 
-                // Set the initial day of the week to Sunday
+                // Initial day of the week to Sunday
                 $dayOfWeek = 0;
 
-                // Create the calendar table
+                // Calendar table
                 echo '<table class="table-striped offset-lg-4 col-lg-4">';
 
-                // Loop over each month in the year
+                // Months in the year
                 for ($month = 1; $month <= $numMonthsInYear; $month++) {
 
-                    // Add the month and year to the top of the calendar
+                    // Adding month in top
                     echo "<th class='text-center bg-danger text-light' colspan='$numDaysInWeek'>" . $months[$month - 1];
 
-                    // Add the weekdays as the table headers
+                    // Adding weekdays
                     echo '<tr>';
                     for ($i = 0; $i < $numDaysInWeek; $i++) {
                         echo '<th class="bg-dark text-light ">' . $weekdays[$i] . '</th>';
                     }
                     echo '</tr>';
 
-                    // Calculate the number of blank cells needed before the first day of the month
+                    // Calculate the number of blank cells\
                     $numBlankCells = $dayOfWeek;
 
-                    // Add the days to the calendar
                     echo '<tr>';
 
                     for ($i = 0; $i < $numBlankCells; $i++) {
@@ -114,22 +113,22 @@
                         if (($dayOfWeek + $day - 1) % $numDaysInWeek == 0) {
                             echo '</tr><tr>';
                         }
-                        // Add the day to the cell
-                        echo '<td class="border border-secondary">' . $day . '</td>';
+                        // Add day
+                        echo '<td class="border border-secondary text-center">' . $day . '</td>';
                     }
-                    // Add blank cells for any days after the last day of the month
+                    // Add blank cells after the last day
                     for ($i = ($dayOfWeek + $numDaysInMonth) % $numDaysInWeek; $i < $numDaysInWeek; $i++) {
                         echo '<td></td>';
                     }
                     echo '</tr>';
 
-                    // Set the day of the week for the first day of the next month
+                    // Set first day of the next month
                     $dayOfWeek = ($dayOfWeek + $numDaysInMonth) % $numDaysInWeek;
 
                     echo "<tr><td>&nbsp;</td></tr>";
 
                 }
-                // Close the calendar table
+            
                 echo '</table>';
             }
             ?>
