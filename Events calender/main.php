@@ -13,7 +13,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
@@ -39,7 +38,7 @@
         echo "<h4 class='text-center'>$monthName $year</h4>";
 
         // Print the calendar header
-        echo "<table class='offset-lg-3 col-lg-6 border border-secondary'>";
+        echo "<table class='offset-lg-3 col-lg-7 border border-secondary'>";
         echo "<tr class='bg-dark text-light text-center'>";
         echo "<th>Mon</th>";
         echo "<th>Tue</th>";
@@ -53,16 +52,16 @@
         // Print the calendar body
         echo "<tr>";
         for ($i = 1; $i < $firstDayOfWeek; $i++) {
-            echo "<td class='border border-secondary'></td>";
+            echo "<td class='border border-secondary col-lg-1'></td>";
         }
         for ($i = 1; $i <= $numDays; $i++) {
-            echo "<td class='p-4 m-4 border border-secondary text-center' id='$i'>$i</td>";
+            echo "<td class='p-4 m-4 border border-secondary text-center col-lg-1'><span>$i</span><div id='$i'></div></td>";
             if (($i + $firstDayOfWeek - 1) % 7 == 0) {
                 echo "</tr><tr>";
             }
         }
         for ($i = ($firstDayOfWeek + $numDays - 1) % 7; $i < 7; $i++) {
-            echo "<td class='border border-secondary'></td>";
+            echo "<td class='border border-secondary col-lg-1'></td>";
         }
         echo "</tr>";
 
@@ -77,31 +76,43 @@
 
 <script>
     $(document).ready(function () {
-        $("td").click(function () {
-            let event = prompt("Enter events");
+        $("td span").click(function () {
+            let event1 = prompt("Enter events");
             let date = this.innerText;
-
-            $.ajax({
-                type: "post",
-                url: "insertDB.php",
-                data: { event: event, date: date },
-                dataType: "text",
-                success: function (response) {
-                    alert("Event added successfully!!!");
-                }
-            });
+            if (event1 != "") {
+                $.ajax({
+                    type: "post",
+                    url: "insertDB.php",
+                    data: { event: event, date: date },
+                    dataType: "text",
+                    success: function (response) {
+                        alert("Event added successfully!!!");
+                    }
+                });
+            } else {
+                
+            }
         })
-
+        let stratingDate = 1;
         $.ajax({
             type: "GET",
             url: "fetch.php",
-            dataType: "text",
+            dataType: "JSON",
             success: function (data) {
-                console.log(data);
-                $(`#${data.date} div`).append(data.event);
+
+                $.each(data, function () {
+                    var key = Object.keys(this)[0];
+                    var value = this[key];
+                    $("#" + key).append(`<p class='bg-primary text-light rounded'>${value}</p>`);
+                });
+
             }
 
         });
     });
 
+
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
 </script>

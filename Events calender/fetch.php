@@ -7,13 +7,12 @@ $my_query = "SELECT * FROM event_table";
 
 $con = $connect->query($my_query);
 
-$event;
-$date;
+$event_array = [];
 
 if($con->num_rows > 0){
     while($row= $con->fetch_assoc()){
-        echo $event, $date;;
+        $event_array[] = [$row['date'] => $row['event']];
     }
 
-}
+}echo json_encode($event_array);
 ?>
