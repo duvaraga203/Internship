@@ -18,7 +18,7 @@
 
 <body>
 
-    <h3 class="text-center">Event calender</h3>
+    <h3 class="text-center" id="car">Event calender</h3>
 
     <div class="container">
         <?php
@@ -79,37 +79,72 @@
         $("td span").click(function () {
             let event1 = prompt("Enter events");
             let date = this.innerText;
-            if (event1 != "") {
+            if (event1 != null && event1 != "" && event1 != undefined) {
                 $.ajax({
                     type: "post",
                     url: "insertDB.php",
-                    data: { event: event, date: date },
+                    data: { event: event1, date: date },
                     dataType: "text",
                     success: function (response) {
-                        alert("Event added successfully!!!");
+                        alert(response);
+                        location.reload();
                     }
                 });
+
             } else {
-                
+
+                event.preventDefault();
             }
         })
-        let stratingDate = 1;
+
+        
+
         $.ajax({
             type: "GET",
             url: "fetch.php",
             dataType: "JSON",
             success: function (data) {
-
                 $.each(data, function () {
                     var key = Object.keys(this)[0];
+                    var key1 = Object.keys(this)[1];
                     var value = this[key];
-                    $("#" + key).append(`<p class='bg-primary text-light rounded'>${value}</p>`);
+                    var value1 = this[key1];
+                    $("#" + key).append(`<p class='bg-primary text-light rounded event' id="i${value1}">${value}</p>`);
                 });
 
             }
 
         });
     });
+
+    $(document).on('click', '.event', function () {
+
+        var id = $(this).attr('id');
+        
+        let del = id.substring(1,id.length);
+
+        alert("Do you wanna delete this event?");
+        $.ajax({
+            type: "post",
+            url: "delete.php",
+            data: {delete : del},
+            dataType: "text",
+            success: function (response) {
+                alert(response);
+                location.reload();
+            }
+            
+        });
+    });
+ 
+function done() {
+  setTimeout( function() { 
+  updates(); 
+  done();
+  }, 200);
+}
+ 
+function updates() { }
 
 
     if (window.history.replaceState) {
