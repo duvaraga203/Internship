@@ -38,7 +38,7 @@
         echo "<h4 class='text-center'>$monthName $year</h4>";
 
         // Print the calendar header
-        echo "<table class='offset-lg-3 col-lg-6 border border-secondary'>";
+        echo "<table class='offset-lg-1 col-lg-10 border border-secondary'>";
         echo "<tr class='bg-dark text-light text-center'>";
         echo "<th>Mon</th>";
         echo "<th>Tue</th>";
@@ -52,16 +52,16 @@
         // Print the calendar body
         echo "<tr>";
         for ($i = 1; $i < $firstDayOfWeek; $i++) {
-            echo "<td class='border border-secondary col-lg-1'></td>";
+            echo "<td class='border border-secondary'></td>";
         }
         for ($i = 1; $i <= $numDays; $i++) {
-            echo "<td class='p-4 m-4 border border-secondary text-center col-lg-1'><span>$i</span><div id='i$i'></div></td>";
+            echo "<td class='p-4 m-4 border border-secondary text-center'><span class='h5' id='d$i'>$i</span><div id='i$i'></div></td>";
             if (($i + $firstDayOfWeek - 1) % 7 == 0) {
                 echo "</tr><tr>";
             }
         }
         for ($i = ($firstDayOfWeek + $numDays - 1) % 7; $i < 7; $i++) {
-            echo "<td class='border border-secondary col-lg-1'></td>";
+            echo "<td class='border border-secondary'></td>";
         }
         echo "</tr>";
 
@@ -88,6 +88,7 @@
                     success: function (response) {
                         alert(response);
                         updates();
+                        
                     }
                 });
 
@@ -98,7 +99,8 @@
             }
         })
 
-        updates();
+        // updates();
+        setInterval(updates,2000);
 
 
 
@@ -107,8 +109,6 @@
             var del = $(this).attr('id');
 
             var agree = confirm("Do you wanna delete this event?");
-
-            console.log(agree);
 
             if (agree) {
                 $.ajax({
@@ -119,6 +119,7 @@
                     success: function (response) {
                         alert(response);
                         updates();
+                        
                     }
 
                 });
