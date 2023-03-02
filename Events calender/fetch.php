@@ -7,7 +7,7 @@ $my_query = "SELECT * FROM event_table";
 
 $con = $connect->query($my_query);
 
-$event_array = [];
+$event_array = array();
 
 if($con->num_rows > 0){
     while($row= $con->fetch_assoc()){
@@ -16,4 +16,5 @@ if($con->num_rows > 0){
 
 }
 echo json_encode($event_array);
+
 ?>

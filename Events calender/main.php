@@ -88,9 +88,9 @@
                     success: function (response) {
                         alert(response);
                         updates();
-
                     }
                 });
+
 
             } else {
 
@@ -99,6 +99,8 @@
         })
 
         updates();
+
+
 
         $(document).on('click', '.event', function () {
 
@@ -135,8 +137,9 @@
             url: "fetch.php",
             dataType: "json",
             success: function (data) {
+                $(".event").empty();
                 for (let num = 0; num < data.length; num++) {
-                    $("#i" + data[num][0]).html(`<p class='bg-primary text-light rounded event' id="${data[num][2]}">${data[num][1]}</p>`);
+                    $("#i" + data[num][0]).append(`<p class='bg-primary text-light rounded event' id="${data[num][2]}">${data[num][1]}</p>`);
 
                 }
             }
