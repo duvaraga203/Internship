@@ -87,7 +87,7 @@
                     dataType: "text",
                     success: function (response) {
                         alert(response);
-                        // updates();
+                        updates();
 
                     }
                 });
@@ -104,18 +104,26 @@
 
             var del = $(this).attr('id');
 
-            alert("Do you wanna delete this event?");
-            $.ajax({
-                type: "post",
-                url: "delete.php",
-                data: { delete: del },
-                dataType: "text",
-                success: function (response) {
-                    alert(response);
-                    // updates();
-                }
+            var agree = confirm("Do you wanna delete this event?");
 
-            });
+            console.log(agree);
+
+            if (agree) {
+                $.ajax({
+                    type: "post",
+                    url: "delete.php",
+                    data: { delete: del },
+                    dataType: "text",
+                    success: function (response) {
+                        alert(response);
+                        updates();
+                    }
+
+                });
+            } else {
+                event.preventDefault();
+            }
+
         });
 
     });
@@ -128,7 +136,7 @@
             dataType: "json",
             success: function (data) {
                 for (let num = 0; num < data.length; num++) {
-                    $("#i" + data[num][0]).append(`<p class='bg-primary text-light rounded event' id="${data[num][2]}">${data[num][1]}</p>`);
+                    $("#i" + data[num][0]).html(`<p class='bg-primary text-light rounded event' id="${data[num][2]}">${data[num][1]}</p>`);
 
                 }
             }
@@ -141,4 +149,5 @@
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
     }
+
 </script>
