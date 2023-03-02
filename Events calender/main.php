@@ -20,7 +20,7 @@
 
     <h3 class="text-center" id="car">Event calender</h3>
 
-    <div class="container">
+    <div class="container" id="tbl">
         <?php
         // Get the current year and month
         $year = date('Y');
@@ -38,7 +38,7 @@
         echo "<h4 class='text-center'>$monthName $year</h4>";
 
         // Print the calendar header
-        echo "<table class='offset-lg-3 col-lg-7 border border-secondary'>";
+        echo "<table class='offset-lg-3 col-lg-6 border border-secondary'>";
         echo "<tr class='bg-dark text-light text-center'>";
         echo "<th>Mon</th>";
         echo "<th>Tue</th>";
@@ -55,7 +55,7 @@
             echo "<td class='border border-secondary col-lg-1'></td>";
         }
         for ($i = 1; $i <= $numDays; $i++) {
-            echo "<td class='p-4 m-4 border border-secondary text-center col-lg-1'><span>$i</span><div id='$i'></div></td>";
+            echo "<td class='p-4 m-4 border border-secondary text-center col-lg-1'><span>$i</span><div id='i$i'></div></td>";
             if (($i + $firstDayOfWeek - 1) % 7 == 0) {
                 echo "</tr><tr>";
             }
@@ -87,7 +87,8 @@
                     dataType: "text",
                     success: function (response) {
                         alert(response);
-                        location.reload();
+                        // updates();
+
                     }
                 });
 
@@ -97,54 +98,44 @@
             }
         })
 
-        
+        updates();
+
+        $(document).on('click', '.event', function () {
+
+            var del = $(this).attr('id');
+
+            alert("Do you wanna delete this event?");
+            $.ajax({
+                type: "post",
+                url: "delete.php",
+                data: { delete: del },
+                dataType: "text",
+                success: function (response) {
+                    alert(response);
+                    // updates();
+                }
+
+            });
+        });
+
+    });
+
+    function updates() {
 
         $.ajax({
             type: "GET",
             url: "fetch.php",
-            dataType: "JSON",
+            dataType: "json",
             success: function (data) {
-                $.each(data, function () {
-                    var key = Object.keys(this)[0];
-                    var key1 = Object.keys(this)[1];
-                    var value = this[key];
-                    var value1 = this[key1];
-                    $("#" + key).append(`<p class='bg-primary text-light rounded event' id="i${value1}">${value}</p>`);
-                });
+                for (let num = 0; num < data.length; num++) {
+                    $("#i" + data[num][0]).append(`<p class='bg-primary text-light rounded event' id="${data[num][2]}">${data[num][1]}</p>`);
 
+                }
             }
 
         });
-    });
 
-    $(document).on('click', '.event', function () {
-
-        var id = $(this).attr('id');
-        
-        let del = id.substring(1,id.length);
-
-        alert("Do you wanna delete this event?");
-        $.ajax({
-            type: "post",
-            url: "delete.php",
-            data: {delete : del},
-            dataType: "text",
-            success: function (response) {
-                alert(response);
-                location.reload();
-            }
-            
-        });
-    });
- 
-function done() {
-  setTimeout( function() { 
-  updates(); 
-  done();
-  }, 200);
-}
- 
-function updates() { }
+    }
 
 
     if (window.history.replaceState) {
